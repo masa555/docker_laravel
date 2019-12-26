@@ -43,3 +43,7 @@ dump:
 	docker-compose exec app php artisan dump-server
 test:
 	docker-compose exec app php ./vendor/bin/phpunit
+app:
+	docker-compose exec app ash
+mysql:
+	docker-compose exec db bash -c 'mysql -uroot -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}'
